@@ -1,0 +1,6 @@
+.thumbs-main
+   each val, index in imgList
+    if (index == 0)
+      +slider-thumbs-item(val.id, val.src, val.alt, 'slider-thumbs-active')
+    else if (index < 4)
+      +slider-thumbs-item(val.id, val.src, val.alt, '')

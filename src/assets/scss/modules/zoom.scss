@@ -1,0 +1,25 @@
+.zoomer {
+  //max-width: 300px;
+  background-position: 50% 50%;
+  position: relative;
+  //width: 500px;
+  overflow: hidden;
+  cursor: zoom-in;
+  width: fit-content;
+  height: fit-content;
+
+  //&-fit {
+  //  width: fit-content;
+  //  height: fit-content;
+  //}
+}
+
+.zoomer img:hover {
+  opacity: 0;
+}
+
+.zoomer img {
+  transition: opacity .5s;
+  display: block;
+  width: 100%;
+}

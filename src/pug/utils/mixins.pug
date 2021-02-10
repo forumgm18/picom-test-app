@@ -1,0 +1,14 @@
+mixin slider-item(val, cls)
+  .slider-item(class=cls data-img-id=val.id )
+    .zoomer(style=`background-image: url(${val.src});`)
+      img(class='slider-img' src=val.src alt=val.alt )
+    .slider-item-label new
+
+mixin slider-thumbs-item(id, src, alt, cls)
+  .slider-thumbs-item(class=cls data-thumbs-id=id)
+    img(class='slider-thumbs-img' src=src alt=alt)
+
+mixin fox-item(val, idx, cls)
+  .fox-slider-item(class=cls data-img-id=val.id)
+    img(src=val.src alt=val.alt data-gallery-name='gal')
+

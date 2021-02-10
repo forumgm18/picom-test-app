@@ -1,0 +1,30 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Picom Тестовое задание';
+  - var description = 'Picom Тестовое задание';
+  - var pageClass = '';
+  -
+    var imgList = [
+      {id: 1, src: 'assets/img/cat1.jpg', alt: 'Котик 1'},
+      {id: 2, src: 'assets/img/cat2.jpg', alt: 'Котик 2'},
+      {id: 3, src: 'assets/img/cat3.jpg', alt: 'Котик 3'},
+      {id: 4, src: 'assets/img/cat4.jpg', alt: 'Котик 4'},
+      {id: 5, src: 'assets/img/cat5.jpg', alt: 'Котик 5'},
+      {id: 6, src: 'assets/img/cat6.jpg', alt: 'Котик 6'},
+      {id: 7, src: 'assets/img/cat7.jpg', alt: 'Котик 7'},
+      {id: 8, src: 'assets/img/cat8.jpg', alt: 'Котик 8'},
+      {id: 9, src: 'assets/img/cat9.jpg', alt: 'Котик 9'}
+    ];
+
+
+block slider
+  .container
+    .main-slider-container
+      .main-slider-thumbs
+        include ../includes/modules/thumbs-main
+      .main-slider-slider
+        include ../includes/modules/slides-main
+
+    .fox-slider-container
+      include ../includes/modules/fox-slider

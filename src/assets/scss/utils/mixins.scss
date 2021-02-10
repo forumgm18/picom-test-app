@@ -1,0 +1,85 @@
+// px to rem
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+@mixin size($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin fontInherit($ff: inherit, $fz: inherit, $fw: inherit, $fs: inherit, $lh: inherit, $ls: inherit, $ta: inherit, $color: inherit, $fst: inherit, ) {
+  font-family: $ff;
+  font-size: $fz;
+  font-weight: $fw;
+  font-style: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  text-align: $ta;
+  color: $color;
+  font-stretch: $fst;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+@mixin placeholder2 {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin media-max-width2($breakpoint) {
+  @media screen and (max-width: $breakpoint + 'px') {
+    @content;
+  }
+}
+@mixin media-min-width2($breakpoint) {
+  @media screen and (min-width: $breakpoint + 'px') {
+    @content;
+  }
+}
+
+@mixin media-max-width($name, $breakpoints: $grid-breakpoints, $offset: 0px) {
+  //$min: breakpoint-min($name, $breakpoints);
+  $min: map-get($breakpoints, $name);
+
+  @if $min != 0 {
+    @media screen and (max-width: $min + $offset) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin media-min-width($name, $breakpoints: $grid-breakpoints) {
+  //$min: breakpoint-min($name, $breakpoints);
+  $min: map-get($breakpoints, $name);
+
+  @if $min != 0 {
+    @media screen and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+//@mixin get-mobile-menu-padding($name, $breakpoints: $container-max-widths) {
+//  //$min: breakpoint-min($name, $breakpoints);
+//  $min: map-get($breakpoints, $name);
+//
+//  @if $min != 0 {
+//    @return padding-left: calc((100vw - $min) / 2);
+//  } @else {
+//    padding-left: 0;
+//  }
+//}

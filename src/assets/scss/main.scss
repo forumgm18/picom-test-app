@@ -1,0 +1,92 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/reset";
+
+:root {
+  --thumbs-active-border: yellow;
+  --main-slider-label-bgr: orange;
+  --main-slider-label-text: #fff;
+  --gallery-container-bgr: rgba(0, 0, 0, 0.9);
+  --gallery-container-close: gray;
+  --nav-line-width: 2px;
+  --nav-color: #808080;
+  --dots-color: gray;
+  --dots-color-current: #fff;//#333;
+  --dots-padding: 20px;
+  --dot-size: 20px;
+  --slider-nav-line-width: 2px;
+  --slider-nav-color: #808080;
+  --slider-dots-color: gray;
+  --slider-dots-color-current: #333;
+  --slider-dots-padding: 20px;
+  --slider-dot-size: 20px;
+}
+
+html {
+  line-height: $mainLineHeight;
+	font-size: $mainFontSize;
+	color: $mainFontColor;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $mainFont1;
+	font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 50px;
+}
+
+.main-slider {
+  &-container{
+    display: flex;
+    align-items: flex-start;
+    padding: 50px 0;
+  }
+  &-thumbs{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+  }
+}
+
+.thumbs-main {
+    display: flex;
+    flex-direction: column;
+    //align-items: flex-start;
+}
+.slides-main {
+    //display: flex;
+    //align-items: flex-start;
+
+  font-size: 70vh;
+  width: 0.75em;
+  height: 1em;
+
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+    // Modules
+    // @import "modules/my-module.scss";
+  @import "modules/slider.scss";
+  @import "modules/gal-slider";
+  @import "modules/fox-slider.scss";
+  @import "modules/zoom.scss";
+
+

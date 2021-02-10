@@ -1,0 +1,6 @@
+.slides-main
+  each val, index in imgList
+    if (index == 0)
+      +slider-item(val, 'slider-item-active')
+    else if (index < 4)
+      +slider-item(val)
